@@ -1,8 +1,8 @@
 
 # Change these if needed: first is the source file, others are templates used
 SOURCE = $(wildcard *.md) # try to convert any .md files in the folder
-DOCXTEMPLATE = digra-template.docx # .docx-file used as a reference
-PDFTEMPLATE = article.latex # the default latex template
+DOCXTEMPLATE = reference.docx # .docx-file used as a reference
+PDFTEMPLATE = article.latex # the default latex template for articles
 
 # Just the file name, no extension
 SOURCEBASENAME = $(basename $(SOURCE))

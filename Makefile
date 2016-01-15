@@ -9,17 +9,17 @@ SOURCEBASENAME = $(basename $(SOURCE))
 
 # Assume that images are in folder 'img' and either .jpg or .png files
 IMG = $(wildcard *.jpg *.png)
-IMGFOLDER = $(addprefix $(IMG))
+IMGFOLDER = $(addprefix img/, $(IMG))
 
-pdf:	$(SOURCE) $(IMG)
+pdf:	$(SOURCE) $(IMGFOLDER)
 	pandoc \
-	--smart \
+	--smart --no-tex-ligatures \
 	--normalize \
 	--template=$(PDFTEMPLATE) \
 	--filter pandoc-citeproc \
 	$< -o $(SOURCEBASENAME).pdf
 
-docx:	$(SOURCE) $(IMG)
+docx:	$(SOURCE) $(IMGFOLDER)
 	pandoc \
 	--smart \
 	--normalize \

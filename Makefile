@@ -13,16 +13,12 @@ IMGFOLDER = $(addprefix img/, $(IMG))
 
 pdf:	$(SOURCE) $(IMGFOLDER)
 	pandoc \
-	--smart --no-tex-ligatures \
-	--normalize \
 	--template=$(PDFTEMPLATE) \
 	--filter pandoc-citeproc \
 	$< -o $(SOURCEBASENAME).pdf
 
 docx:	$(SOURCE) $(IMGFOLDER)
 	pandoc \
-	--smart \
-	--normalize \
 	--reference-docx=$(DOCXTEMPLATE) \
 	--filter pandoc-citeproc \
 	$< -o $(SOURCEBASENAME).docx
